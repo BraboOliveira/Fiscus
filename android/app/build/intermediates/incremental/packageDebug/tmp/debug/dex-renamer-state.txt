@@ -1,0 +1,4 @@
+#Wed Oct 14 16:33:27 BRT 2020
+base.0=C\:\\Users\\rafae\\Documents\\FTA_FISCUS\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex
