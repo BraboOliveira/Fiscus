@@ -1,10 +1,11 @@
 import styled from 'styled-components/native'
 
+
 export const Container = styled.View`
+  padding-top: 30px;
   display: flex;
   flex: 1;
   background-color: #444a5a;
-  padding: 40px;
   justify-content: center;
   align-items: stretch;
 `;
@@ -56,4 +57,8 @@ export const ButtonText = styled.Text`
   color: #ffffff;
   font-weight: bold;
   font-size: 14px;
+`;
+
+export const ListApp = styled.FlatList`
+ 
 `;

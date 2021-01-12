@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\rafae\\Documents\\FTA_FISCUS\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rCN\\values-zh-rCN.xml",
+            "outputFile": "C:\\Users\\ftafi\\Documents\\Fiscus\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rCN\\values-zh-rCN.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\rafae\\.gradle\\caches\\transforms-2\\files-2.1\\362cd5f8999c639e1c986dcf484e7602\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "source": "C:\\Users\\ftafi\\.gradle\\caches\\transforms-2\\files-2.1\\d6e6723c604dfb5d7617b899549a10d9\\res\\values-zh-rCN\\values-zh-rCN.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\rafae\\.gradle\\caches\\transforms-2\\files-2.1\\0f12cdb8c227911fa21ce7c86956fc28\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "source": "C:\\Users\\ftafi\\.gradle\\caches\\transforms-2\\files-2.1\\1079e790c4ddbb61aefc55f47f17f7ab\\res\\values-zh-rCN\\values-zh-rCN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

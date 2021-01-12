@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { StackActions, NavigationActions } from 'react-navigation';
-import { StatusBar, ActivityIndicator } from 'react-native';
+import { StatusBar, ActivityIndicator,Dimensions, View, ImageBackground, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import base64 from 'react-native-base64';
 import api from '../../services/api';
 import QueryString from 'query-string';
 import AsyncStorage from '@react-native-community/async-storage';
+import Carousel from 'react-native-snap-carousel';
 
 import {
   Container,
@@ -17,12 +18,15 @@ import {
   Button,
   ButtonText,
 } from './styles'
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 export default function Welcome(props) {
   const [username, setUsername] = useState('USUARIO')
   const [password, setPassword] = useState('SENHA')
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState(null)
+  const [ativo, setAtivo] = useState(0);
 
   async function saveUser(user) {
     await AsyncStorage.setItem('@ListApp:access_token', JSON.stringify(user))
@@ -66,6 +70,16 @@ export default function Welcome(props) {
       setErrorMessage('Usuário não existe')
     }
   }
+  const slides = [
+    { title: 'Teste Banner', value: 'Dashboard' ,uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
+    { title: 'Alterar Senha', value: '2', uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
+    { title: 'Falar com o Suporte', value: '3' , uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
+    { title: 'Falar com o Suporte', value: '3', uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg' },
+    // { title: 'Aulas Agendadas', value: 'Agendadas' , uri: 'https://www.autoescolaonline.net/wp-content/uploads/2019/08/post-autoescola-post.jpg'},
+    // { title: 'Alterar Senha', value: '2' , uri: 'https://www.autoescolaonline.net/wp-content/uploads/2019/08/post-autoescola-post.jpg'},
+    // { title: 'Falar com o Suporte', value: '3' , uri: 'https://www.autoescolaonline.net/wp-content/uploads/2019/08/post-autoescola-post.jpg'},
+    // { title: 'Falar com o Suporte', value: '3' , uri: 'https://www.autoescolaonline.net/wp-content/uploads/2019/08/post-autoescola-post.jpg'},
+  ];
   return (
     <Container>
       <StatusBar barStyle="light-content" />
@@ -73,26 +87,42 @@ export default function Welcome(props) {
       <TextInformation>
         Para continuar, precisamos que você informe seu usuário
       </TextInformation>
+      <View style={{ flex: 1, flexDirection:'row', justifyContent: 'center' }} >
+                <Carousel
+                  layout={"default"}
+                  //ref={ref => carousel = ref}
+                  data={slides}
+                  sliderWidth={windowWidth}
+                  itemWidth={windowWidth-70}
+                  renderItem={({item})=>{
+                    return (
+                          <ImageBackground
+                            source={item}
+                            imageStyle={{ borderRadius: 6}}
+                            style={{
+                              opacity:  0.8,
+                              backgroundColor:'#000',
+                              borderRadius: 6,
+                              height: 180,
+                              padding: 20,
+                              marginLeft: 1,
+                              marginRight: 1,
+                               }}>
+                            <Text>{item.title}</Text>
+                            {/* <TextBanner>{item.value}</TextBanner> */}
+                        </ImageBackground>
+
+                      
+                
+                    );
+                }
+                }
+                onSnapToItem = { (index) => {setAtivo(index)}} />
+            </View>
+            <Text>{ativo}</Text>
       {!!errorMessage && <Error>{errorMessage}</Error>}
       <Form>
-        <Input
-          autoCapitalize="none"
-          autoCorrect={false}
-          placeholder="Digite seu usuário"
-          underlineColorAndroid="rgba(0, 0, 0, 0)"
-          value={username}
-          // onChangeText={username => setUsername(username)}
-        />
 
-        <Input
-          autoCapitalize="none"
-          autoCorrect={false}
-          placeholder="Digite sua senha"
-          underlineColorAndroid="rgba(0, 0, 0, 0)"
-          secureTextEntry={true}
-          value={password}
-          // onChangeText={password => setPassword(password)}
-        />
 
         <Button onPress={signIn}>
           {loading ? (

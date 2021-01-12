@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\rafae\\Documents\\FTA_FISCUS\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+            "outputFile": "C:\\Users\\ftafi\\Documents\\Fiscus\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\rafae\\.gradle\\caches\\transforms-2\\files-2.1\\362cd5f8999c639e1c986dcf484e7602\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\ftafi\\.gradle\\caches\\transforms-2\\files-2.1\\d6e6723c604dfb5d7617b899549a10d9\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\rafae\\.gradle\\caches\\transforms-2\\files-2.1\\0f12cdb8c227911fa21ce7c86956fc28\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\ftafi\\.gradle\\caches\\transforms-2\\files-2.1\\1079e790c4ddbb61aefc55f47f17f7ab\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
