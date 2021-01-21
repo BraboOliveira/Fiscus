@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StackActions, NavigationActions } from 'react-navigation';
 import { StatusBar, ActivityIndicator,Dimensions, View, ImageBackground, Text,SafeAreaView } from 'react-native';
 import PropTypes from 'prop-types';
@@ -17,12 +17,17 @@ import {
   Input,
   Button,
   Button2,
+  Button3,
   ButtonText,
   TextBanner,
   StyledFlatList,
   ProviderName,
   HourText,
   SlideBut,
+  PontosSlide,
+  ViewSlide,
+  Buttons,
+  ViewButton2,
 } from './styles'
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -33,6 +38,7 @@ export default function Welcome(props) {
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState(null)
   const [ativo, setAtivo] = useState(0);
+  const [botao, setBotao] = useState(0);
 
   async function saveUser(user) {
     await AsyncStorage.setItem('@ListApp:access_token', JSON.stringify(user))
@@ -76,27 +82,35 @@ export default function Welcome(props) {
       setErrorMessage('Usuário não existe')
     }
   }
+  useEffect(() => {
+    if(botao===3){
+    console.log("Teste Botões")
+    signIn()
+    }
+  }, [botao]);
+  
   const slides = [
     { title: 'Primeiro Banner', value: 0 ,uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
     { title: 'Segundo Banner', value: 1, uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
     { title: 'Terceiro Banner', value: 2 , uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
     { title: 'Quarto Banner', value: 3, uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg' },
-    // { title: 'Aulas Agendadas', value: 'Agendadas' , uri: 'https://www.autoescolaonline.net/wp-content/uploads/2019/08/post-autoescola-post.jpg'},
-    // { title: 'Alterar Senha', value: '2' , uri: 'https://www.autoescolaonline.net/wp-content/uploads/2019/08/post-autoescola-post.jpg'},
-    // { title: 'Falar com o Suporte', value: '3' , uri: 'https://www.autoescolaonline.net/wp-content/uploads/2019/08/post-autoescola-post.jpg'},
-    // { title: 'Falar com o Suporte', value: '3' , uri: 'https://www.autoescolaonline.net/wp-content/uploads/2019/08/post-autoescola-post.jpg'},
+  ];
+  const button2 = [
+    { title: 'Verificar', value: 0 ,uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
+    { title: 'Segundo Banner', value: 1, uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
+    { title: 'Terceiro Banner', value: 2 , uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
+    { title: 'Consulta Dívida Ativa', value: 3, uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg' },
   ];
   return (
     <Container>
       <StatusBar barStyle="light-content" />
-      <Title>Bem-vindo</Title>
+        <Title>Bem-vindo</Title>
       <TextInformation>
         Logo + Algum texto
       </TextInformation>
-      <View style={{ flex: 1, flexDirection:'row', justifyContent: 'center' }} >
+        <ViewSlide>
                 <Carousel
                   layout={"default"}
-                  //ref={ref => carousel = ref}
                   data={slides}
                   sliderWidth={windowWidth}
                   itemWidth={windowWidth-70}
@@ -109,81 +123,88 @@ export default function Welcome(props) {
                               opacity:  0.8,
                               backgroundColor:'#000',
                               borderRadius: 6,
-                              height: 190,
+                              height: 200,
                               padding: 20,
                               marginLeft: 1,
                               marginRight: 1,
                                }}>
-                            <TextBanner>{item.title}</TextBanner>
+                              <TextBanner>{item.title}</TextBanner>
                             {/* <TextBanner>{item.value}</TextBanner> */}
-                        </ImageBackground>
-
-                      
-                
-                    );
-                }
-                }
+                          </ImageBackground>
+                      );
+                    }
+                  }
                 onSnapToItem = { (index) => {setAtivo(index)}} />
-            </View>
-            <Text>{ativo}</Text>
-            <SafeAreaView>
-            <StyledFlatList
-              data={slides}
-              keyExtractor={(item,index) => index.toString()}
-              horizontal= {true}
-              renderItem={({item})=>{
-            return(   
-              <SlideBut> 
+            </ViewSlide>
+
+            <PontosSlide>
+              <SafeAreaView>
+                <StyledFlatList
+                  data={slides}
+                  keyExtractor={(item,index) => index.toString()}
+                  horizontal= {true}
+                  renderItem={({item})=>{
+                return(   
+
                 <Button2 
                   onPress={() => {}}
                   selected={item.value === ativo}
                 >
-                <ProviderName >
-                <HourText  >
-                  {item.value + 1}
-                </HourText>
-                </ProviderName>
-      
+                  <ProviderName >
+                    <HourText  >
+                    {item.value + 1}
+                    </HourText>
+                  </ProviderName>
                 </Button2>
-               </SlideBut>  
+
                     )
                 }}
               />
+                </SafeAreaView>
+              </PontosSlide>
+              
+              <SafeAreaView>
               <StyledFlatList
               data={slides}
+              keyExtractor={(item,index) => index.toString()}
+              horizontal={true}
+              renderItem={({item})=>{
+            return(   
+              <Buttons>
+                <Button 
+                  onPress={()=>{}}
+                >
+                <HourText >
+                  {item.title}
+                </HourText>
+                </Button>
+                </Buttons> 
+                    )
+                }}
+              />
+              </SafeAreaView>
+
+              <ViewButton2>
+              <StyledFlatList
+              data={button2}
               keyExtractor={(item,index) => index.toString()}
               horizontal={false}
               numColumns={2}
               renderItem={({item})=>{
             return(   
-              <View> 
-                <Button 
-                  onPress={() => {}}
+                <Button3 
+                  onPress={()=>{setBotao(item.value)}}
                 >
-                <ProviderName >
                 <HourText >
                   {item.title}
                 </HourText>
-                </ProviderName>
-      
-                </Button>
-               </View>  
+                </Button3>
                     )
                 }}
               />
-              </SafeAreaView>
+              </ViewButton2>
+              
       {!!errorMessage && <Error>{errorMessage}</Error>}
-      <Form>
-
-
-        <Button onPress={signIn}>
-          {loading ? (
-            <ActivityIndicator size="small" color="#FFF" />
-          ) : (
-            <ButtonText>Prosseguir</ButtonText>
-          )}
-        </Button>
-      </Form>
     </Container>
   )
 }

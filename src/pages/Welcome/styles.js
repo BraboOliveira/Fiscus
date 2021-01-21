@@ -3,11 +3,8 @@ import { FlatList } from 'react-native'
 
 export const Container = styled.View`
   padding-top: 30px;
-  display: flex;
   flex: 1;
   background-color: #444a5a;
-  justify-content: center;
-  align-items: stretch;
 `;
 
 export const Title = styled.Text`
@@ -34,10 +31,25 @@ export const Error = styled.Text`
 export const Form = styled.View`
   margin-top: 20px;
 `;
+export const ViewSlide = styled.View`
+  margin-top: 20px;
+  flex-direction: row;
+  height: 200px;
+`;
+
 
 export const SlideBut = styled.View`
   margin: 5px;
-  border-radius: 30px;
+`;
+export const Buttons = styled.View`
+  margin: 10px;
+  height: 50px;
+`;
+export const PontosSlide = styled.View`
+  align-items: center;
+  margin: 5px;
+  height: 30px;
+  justify-content: center;
 `;
 
 export const Input = styled.TextInput`
@@ -49,22 +61,32 @@ export const Input = styled.TextInput`
 `;
 
 export const Button2 = styled.TouchableOpacity`
-  background-color: ${props => (props.selected ? '#666' : '#000')};
+  background-color: ${props => (props.selected ? '#D2691E' : '#000')};
   border-radius: 50px;
-  height: 40px;
-  padding: 0px 10px;
-  margin-top: 5px;
+  margin: 3px;
   justify-content: center;
   align-items: center;
 `;
 export const Button = styled.TouchableOpacity`
   background-color: #7a91ca;
-  border-radius: 3px;
+  border-radius: 30px;
   height: 44px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  
+`;
+export const Button3 = styled.TouchableOpacity`
+  background-color: #7a91ca;
+  border-radius: 3px;
+  height: 100px;
+  width: 110px;
   padding: 0px 20px;
   margin-top: 10px;
   justify-content: center;
   align-items: center;
+  margin: 5px;
 `;
 
 export const ButtonText = styled.Text`
@@ -87,15 +109,19 @@ export const StyledFlatList = styled(FlatList)`
 
 `
 export const ProviderName = styled.Text`
-  margin-left: 8px;
   font-family: 'RobotoSlab-Medium';
-  font-size: 16px;
   color: ${props => (props.selected ? '#9f9ca7' : '#fff')};
-  padding: 4px 4px;
-  margin: 1px;
+  margin: 10px;
 `
 export const HourText = styled.Text`
   color: ${props => (props.selected ? '#000' : '#fff')};
   font-family: 'RobotoSlab-Regular';
-  font-size: 18px;
+  font-size: 10px;
+`
+export const ViewButton2 = styled.SafeAreaView`
+  font-family: 'RobotoSlab-Regular';
+  font-size: 10px;
+  height: 250px;
+  justify-content: center;
+  align-items: center;
 `

@@ -49,15 +49,16 @@ export default function Home() {
 
 	renderListItem = ({ item }) => <ProductItem product={item} />
 
-	return (<Container>
+	return (
+	<Container>
 		<View>
 			<Text>
 				Clique abaixo para consultar
 			</Text>
 			<Button
-		onPress={buscaDados}
-		title="busca"
-		color="#000">
+				onPress={buscaDados}
+				title="busca"
+				color="#000">
 			<ButtonText>
 				Buscar
 			</ButtonText>
@@ -68,10 +69,8 @@ export default function Home() {
 				data={data}
 				keyExtractor={item => String(item.id)}
 				renderItem={renderListItem}
-				// onRefresh={loadProducts}
-				// refreshing={refreshing}
 			/>
-		</Container>
+	</Container>
 	);
 }
 
