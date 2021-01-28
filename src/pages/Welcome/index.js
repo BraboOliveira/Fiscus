@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StackActions, NavigationActions } from 'react-navigation';
-import { StatusBar, ScrollView, ActivityIndicator,Dimensions, View, ImageBackground, Text,SafeAreaView } from 'react-native';
+import { StatusBar, ScrollView, Dimensions, ImageBackground } from 'react-native';
 import PropTypes from 'prop-types';
 import base64 from 'react-native-base64';
 import api from '../../services/api';
@@ -12,24 +12,18 @@ import {
   Container,
   Title,
   TextInformation,
-  Error,
-  Form,
-  Input,
   Button,
   Button2,
   Button3,
-  ButtonText,
   TextBanner,
   StyledFlatList,
   StyledFlatList2,
   ProviderName,
   HourText,
-  SlideBut,
   PontosSlide,
   ViewSlide,
   Buttons,
   ViewButton2,
-  ViewBody,
   ViewBody2,
   Area2
 } from './styles'
