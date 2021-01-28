@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StackActions, NavigationActions } from 'react-navigation';
-import { StatusBar, ActivityIndicator,Dimensions, View, ImageBackground, Text,SafeAreaView } from 'react-native';
+import { StatusBar, ScrollView, ActivityIndicator,Dimensions, View, ImageBackground, Text,SafeAreaView } from 'react-native';
 import PropTypes from 'prop-types';
 import base64 from 'react-native-base64';
 import api from '../../services/api';
@@ -21,6 +21,7 @@ import {
   ButtonText,
   TextBanner,
   StyledFlatList,
+  StyledFlatList2,
   ProviderName,
   HourText,
   SlideBut,
@@ -28,6 +29,9 @@ import {
   ViewSlide,
   Buttons,
   ViewButton2,
+  ViewBody,
+  ViewBody2,
+  Area2
 } from './styles'
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -100,9 +104,14 @@ export default function Welcome(props) {
     { title: 'Segundo Banner', value: 1, uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
     { title: 'Terceiro Banner', value: 2 , uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
     { title: 'Consulta Dívida Ativa', value: 3, uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg' },
+    { title: 'Verificar', value: 0 ,uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
+    { title: 'Segundo Banner', value: 1, uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
+    { title: 'Terceiro Banner', value: 2 , uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
+    { title: 'Consulta Dívida Ativa', value: 3, uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg' },
   ];
   return (
     <Container>
+      <ScrollView     style={{flex:1}}>
       <StatusBar barStyle="light-content" />
         <Title>Bem-vindo</Title>
       <TextInformation>
@@ -135,10 +144,10 @@ export default function Welcome(props) {
                     }
                   }
                 onSnapToItem = { (index) => {setAtivo(index)}} />
-            </ViewSlide>
+        </ViewSlide>
 
             <PontosSlide>
-              <SafeAreaView>
+              
                 <StyledFlatList
                   data={slides}
                   keyExtractor={(item,index) => index.toString()}
@@ -160,14 +169,14 @@ export default function Welcome(props) {
                     )
                 }}
               />
-                </SafeAreaView>
-              </PontosSlide>
-              
-              <SafeAreaView>
-              <StyledFlatList
-              data={slides}
-              keyExtractor={(item,index) => index.toString()}
-              horizontal={true}
+                
+            </PontosSlide>
+            <Area2>
+              <ViewBody2>
+              <StyledFlatList2
+                data={slides}
+                keyExtractor={(item,index) => index.toString()}
+                horizontal={true}
               renderItem={({item})=>{
             return(   
               <Buttons>
@@ -182,14 +191,13 @@ export default function Welcome(props) {
                     )
                 }}
               />
-              </SafeAreaView>
-
+            </ViewBody2>
               <ViewButton2>
               <StyledFlatList
               data={button2}
               keyExtractor={(item,index) => index.toString()}
               horizontal={false}
-              numColumns={2}
+              numColumns={3}
               renderItem={({item})=>{
             return(   
                 <Button3 
@@ -203,8 +211,8 @@ export default function Welcome(props) {
                 }}
               />
               </ViewButton2>
-              
-      {!!errorMessage && <Error>{errorMessage}</Error>}
+      </Area2>
+      </ScrollView>
     </Container>
   )
 }

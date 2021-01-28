@@ -4,7 +4,8 @@ import { FlatList } from 'react-native'
 export const Container = styled.View`
   padding-top: 30px;
   flex: 1;
-  background-color: #444a5a;
+  background-color: #DED5FD;
+  align-items: center;
 `;
 
 export const Title = styled.Text`
@@ -13,115 +14,144 @@ export const Title = styled.Text`
   font-size: 24px;
   font-weight: bold;
 `;
-
+//Texto embaixo da logo
 export const TextInformation = styled.Text`
   text-align: center;
   margin-top: 10px;
   font-size: 14px;
   color: #dddddd;
   line-height: 21px;
+  background-color: #000;
 `;
 
-export const Error = styled.Text`
-  color: #e37a7a;
-  text-align: center;
-  margin-top: 10px;
+
+//Area debaixo do slide
+export const Area2 = styled.View`
+
+height: 100%;
 `;
 
-export const Form = styled.View`
-  margin-top: 20px;
-`;
+// Janela do Side
 export const ViewSlide = styled.View`
   margin-top: 20px;
   flex-direction: row;
-  height: 200px;
+  height: 30%;
+  
 `;
-
 
 export const SlideBut = styled.View`
   margin: 5px;
+  
 `;
+//Area de cada botão
 export const Buttons = styled.View`
-  margin: 10px;
-  height: 50px;
+  margin: 4px;
+  height: 80px;
+  
 `;
+//Area ponto do slide
 export const PontosSlide = styled.View`
   align-items: center;
   margin: 5px;
   height: 30px;
   justify-content: center;
+  
 `;
 
-export const Input = styled.TextInput`
-  background-color: #ffffff;
-  border-radius: 3px;
-  height: 44px;
-  padding: 0px 20px;
-  margin-bottom: 10px;
-`;
-
+//pontos do slide
 export const Button2 = styled.TouchableOpacity`
   background-color: ${props => (props.selected ? '#D2691E' : '#000')};
   border-radius: 50px;
   margin: 3px;
+  height: 10px;
+  width: 10px;
   justify-content: center;
   align-items: center;
 `;
+//botão redondo
 export const Button = styled.TouchableOpacity`
-  background-color: #7a91ca;
-  border-radius: 30px;
-  height: 44px;
+  background-color: #fff;
+  border-radius: 50px;
+  height: 70px;
+  width: 70px;
   padding: 10px 20px;
-  margin-top: 10px;
+  margin: 10px;
   justify-content: center;
   align-items: center;
   
 `;
+
+//Botões debaixo
 export const Button3 = styled.TouchableOpacity`
-  background-color: #7a91ca;
-  border-radius: 3px;
-  height: 100px;
-  width: 110px;
-  padding: 0px 20px;
-  margin-top: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 10px;
   justify-content: center;
   align-items: center;
-  margin: 5px;
+  height: 100px;
+  width: 100px;
 `;
 
 export const ButtonText = styled.Text`
-  color: #ffffff;
+  color: #fff;
   font-weight: bold;
   font-size: 14px;
+  
 `;
 
 export const ListApp = styled.FlatList`
  
 `;
-
+//Texto do Banner
 export const TextBanner = styled.Text`
   font-family: 'RobotoSlab-Medium';
   font-size: 24px;
   color: #ffeb3b;
   text-shadow: 0px 0px 15px #000;
+  
 `
+//Flatlist Botoes quadrados
 export const StyledFlatList = styled(FlatList)`
 
 `
+//Flatlist botões redondos
+export const StyledFlatList2 = styled(FlatList)`
+
+`
+
 export const ProviderName = styled.Text`
   font-family: 'RobotoSlab-Medium';
-  color: ${props => (props.selected ? '#9f9ca7' : '#fff')};
+  color: ${props => (props.selected ? '#9f9ca7' : '#000')};
   margin: 10px;
+
 `
+//Texto dos botões
 export const HourText = styled.Text`
-  color: ${props => (props.selected ? '#000' : '#fff')};
+  color: ${props => (props.selected ? '#000' : '#000')};
   font-family: 'RobotoSlab-Regular';
   font-size: 10px;
 `
-export const ViewButton2 = styled.SafeAreaView`
+//Area dos Botões debaixo
+export const ViewButton2 = styled.View`
   font-family: 'RobotoSlab-Regular';
   font-size: 10px;
-  height: 250px;
+  height: 100%;
   justify-content: center;
   align-items: center;
+  
+`
+// Area dos botoes redondos
+export const ViewBody= styled.SafeAreaView`
+  font-family: 'RobotoSlab-Regular';
+  font-size: 10px;
+  justify-content: center;
+  align-items: center;
+`
+export const ViewBody2= styled.SafeAreaView`
+  font-family: 'RobotoSlab-Regular';
+  font-size: 10px;
+  height: 13%;
+  justify-content: center;
+  align-items: center;
+  
 `
