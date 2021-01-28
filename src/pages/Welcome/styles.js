@@ -35,7 +35,7 @@ height: 100%;
 export const ViewSlide = styled.View`
   margin-top: 20px;
   flex-direction: row;
-  height: 30%;
+  height: 28%;
   
 `;
 
@@ -45,15 +45,14 @@ export const SlideBut = styled.View`
 `;
 //Area de cada botão
 export const Buttons = styled.View`
-  margin: 4px;
+  margin: 6px;
   height: 80px;
   
 `;
 //Area ponto do slide
 export const PontosSlide = styled.View`
   align-items: center;
-  margin: 5px;
-  height: 30px;
+  margin: 1px;
   justify-content: center;
   
 `;
@@ -72,10 +71,10 @@ export const Button2 = styled.TouchableOpacity`
 export const Button = styled.TouchableOpacity`
   background-color: #fff;
   border-radius: 50px;
-  height: 70px;
-  width: 70px;
-  padding: 10px 20px;
-  margin: 10px;
+  height: 80px;
+  width: 80px;
+  padding: 15px 20px;
+  margin: 8px;
   justify-content: center;
   align-items: center;
   
@@ -146,6 +145,7 @@ export const ViewBody= styled.SafeAreaView`
   font-size: 10px;
   justify-content: center;
   align-items: center;
+  background-color: #000;
 `
 export const ViewBody2= styled.SafeAreaView`
   font-family: 'RobotoSlab-Regular';
@@ -153,5 +153,4 @@ export const ViewBody2= styled.SafeAreaView`
   height: 13%;
   justify-content: center;
   align-items: center;
-  
 `

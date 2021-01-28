@@ -97,7 +97,6 @@ export default function Welcome(props) {
     { title: 'Primeiro Banner', value: 0 ,uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
     { title: 'Segundo Banner', value: 1, uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
     { title: 'Terceiro Banner', value: 2 , uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
-    { title: 'Quarto Banner', value: 3, uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg' },
   ];
   const button2 = [
     { title: 'Verificar', value: 0 ,uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
