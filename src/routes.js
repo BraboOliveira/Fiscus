@@ -11,11 +11,10 @@ const StackNavigator = createStackNavigator(
   },
   {
     initialRouteName: 'Home',
+
     defaultNavigationOptions: {
-      headerTintColor: '#000',
-      headerTitleStyle: {
-        fontWeight: 'bold',
-      },
+      headerShown: false,
+      headerVisible: false,
     },
   },
 );
@@ -30,8 +29,6 @@ const AuthStack = createStackNavigator(
   },
   {
     initialRouteName: 'SignIn',
-    headerMode: 'none',
-    header: null,
   },
 );
 

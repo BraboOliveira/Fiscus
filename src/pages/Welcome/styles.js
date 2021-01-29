@@ -27,7 +27,6 @@ export const TextInformation = styled.Text`
 
 //Area debaixo do slide
 export const Area2 = styled.View`
-
 height: 100%;
 `;
 
@@ -36,7 +35,6 @@ export const ViewSlide = styled.View`
   margin-top: 20px;
   flex-direction: row;
   height: 28%;
-  
 `;
 
 export const SlideBut = styled.View`
@@ -45,9 +43,8 @@ export const SlideBut = styled.View`
 `;
 //Area de cada botão
 export const Buttons = styled.View`
-  margin: 6px;
-  height: 80px;
-  
+  height: 20px;
+  margin-bottom: 50px;
 `;
 //Area ponto do slide
 export const PontosSlide = styled.View`
@@ -73,8 +70,8 @@ export const Button = styled.TouchableOpacity`
   border-radius: 50px;
   height: 80px;
   width: 80px;
-  padding: 15px 20px;
-  margin: 8px;
+  padding: 15px 20px ;
+  margin: 9px;
   justify-content: center;
   align-items: center;
   
@@ -84,7 +81,7 @@ export const Button = styled.TouchableOpacity`
 export const Button3 = styled.TouchableOpacity`
   background-color: #fff;
   border-radius: 10px;
-  margin: 10px;
+  margin: 5px;
   justify-content: center;
   align-items: center;
   height: 100px;
@@ -137,6 +134,8 @@ export const ViewButton2 = styled.View`
   height: 100%;
   justify-content: center;
   align-items: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
   
 `
 // Area dos botoes redondos
@@ -150,7 +149,7 @@ export const ViewBody= styled.SafeAreaView`
 export const ViewBody2= styled.SafeAreaView`
   font-family: 'RobotoSlab-Regular';
   font-size: 10px;
-  height: 13%;
+  height: 18%;
   justify-content: center;
   align-items: center;
 `

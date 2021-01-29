@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StackActions, NavigationActions } from 'react-navigation';
+import { StackActions, NavigationActions, SafeAreaView } from 'react-navigation';
 import { StatusBar, ScrollView, Dimensions, ImageBackground } from 'react-native';
 import PropTypes from 'prop-types';
 import base64 from 'react-native-base64';
@@ -91,6 +91,7 @@ export default function Welcome(props) {
     { title: 'Primeiro Banner', value: 0 ,uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
     { title: 'Segundo Banner', value: 1, uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
     { title: 'Terceiro Banner', value: 2 , uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
+    { title: 'Terceiro Banner', value: 3 , uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
   ];
   const button2 = [
     { title: 'Verificar', value: 0 ,uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
@@ -99,13 +100,10 @@ export default function Welcome(props) {
     { title: 'Consulta Dívida Ativa', value: 3, uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg' },
     { title: 'Verificar', value: 0 ,uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
     { title: 'Segundo Banner', value: 1, uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
-    { title: 'Terceiro Banner', value: 2 , uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg'},
-    { title: 'Consulta Dívida Ativa', value: 3, uri: 'https://tropicaldiscovery.com/wp-content/grand-media/image/Atitlan-Menu-Banner-e1501248540966.jpg' },
-  ];
+ ];
   return (
     <Container>
       <ScrollView     style={{flex:1}}>
-      <StatusBar barStyle="light-content" />
         <Title>Bem-vindo</Title>
       <TextInformation>
         Logo + Algum texto
@@ -125,7 +123,7 @@ export default function Welcome(props) {
                               opacity:  0.8,
                               backgroundColor:'#000',
                               borderRadius: 6,
-                              height: 200,
+                              height: 155,
                               padding: 20,
                               marginLeft: 1,
                               marginRight: 1,
@@ -164,7 +162,7 @@ export default function Welcome(props) {
               />
                 
             </PontosSlide>
-            <Area2>
+  
               <ViewBody2>
               <StyledFlatList2
                 data={slides}
@@ -204,7 +202,7 @@ export default function Welcome(props) {
                 }}
               />
               </ViewButton2>
-      </Area2>
+      
       </ScrollView>
     </Container>
   )
